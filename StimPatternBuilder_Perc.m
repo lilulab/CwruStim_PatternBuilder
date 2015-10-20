@@ -39,7 +39,7 @@ for j=0:1  % board loop
         pattern.channel_data(:,2,i+1+j*12) = pattern.board_data(1+i*8:8+i*8,2,j+1);
         % IPI (ms)
         pattern.channel_data(:,3,i+1+j*12) = pattern.board_data(1+i*8,3,j+1);
-        
+                
       % Right step
         % Percent Pattern
         pattern.channel_data(:,4,i+1+j*12) = pattern.board_data(1+i*8:8+i*8,4,j+1);
@@ -47,22 +47,33 @@ for j=0:1  % board loop
         pattern.channel_data(:,5,i+1+j*12) = pattern.board_data(1+i*8:8+i*8,5,j+1);
         % IPI (ms)
         pattern.channel_data(:,6,i+1+j*12) = pattern.board_data(1+i*8,6,j+1);
+        
     end
 end
 
-%% Gait pattern
-% pattern.gait_pluse_width(step,channel,board)
+%% Gait pattern to Cpp head files
 
 % board loop
-for k=1:2
-    % percent pattern loop
-    for j=0:7
+for j=0:1
         % channel loop
         for i=0:11
-            %pattern.gait_pluse_width (1+j,1+i,k) = pattern.channel_data(1+i+8,,k);
-
+            
+            str = ['board' num2str(j+1) '.CH' num2str(dec2hex(i+1))];
+            % varname = genvarname(str)
+            % varname = matlab.lang.makeValidName(str);
+            varname = matlab.lang.makeUniqueStrings(str);
+            
+            % L
+            src = ['channel_data(:,1:3,i+1+j*12);' ];
+            eval(['gait_H.' 'Walk.' 'Lstep.' varname ' = ' 'pattern.' src]);
+            
+            % R
+            src = ['channel_data(:,4:6,i+1+j*12);' ];
+            eval(['gait_H.' 'Walk.' 'Rstep.' varname ' = ' 'pattern.' src]);            
+            
+            display ([i j]);
         end
-    end
+
 end
 
 
