@@ -56,7 +56,9 @@ stim_patterns.sit_pw = uint8(sitstimpw);
 
 %% Generate head files
 % open head file
-fid = fopen('StimPattern.h', 'w');
+filename = input('Create file(*.h): ', 's');
+delete (filename);
+fid = fopen(filename, 'a');
 
 % print a comment title, followed by a blank line
 fprintf(fid, '// StimPattern.h - Head file for storage Stim Patterns.\r\n');

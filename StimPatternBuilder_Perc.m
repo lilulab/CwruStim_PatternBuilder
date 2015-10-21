@@ -65,15 +65,19 @@ for j=0:1
             
             % L
             src = ['channel_data(:,1:3,i+1+j*12);' ];
-            eval(['gait_H.' 'Walk.' 'Lstep.' varname ' = ' 'pattern.' src]);
+            eval(['gait.' 'Walk.' 'Lstep.' varname ' = ' 'pattern.' src]);
             
             % R
             src = ['channel_data(:,4:6,i+1+j*12);' ];
-            eval(['gait_H.' 'Walk.' 'Rstep.' varname ' = ' 'pattern.' src]);            
+            eval(['gait.' 'Walk.' 'Rstep.' varname ' = ' 'pattern.' src]);            
             
-            display ([i j]);
+            %display ([i j]);
         end
 
 end
+
+display ('Done!');
+
+gait2hpp
 
 
