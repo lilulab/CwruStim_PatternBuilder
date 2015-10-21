@@ -9,31 +9,54 @@ data_len = size(data_src);
 % % const PROGMEM  dataType  variableName[] = {}; // or this form
 % % const dataType PROGMEM variableName[] = {};   // not this one
 
-% print array header
-fprintf(file_id, 'const ');
-fprintf(file_id, data_type);
-fprintf(file_id, ' ');
-fprintf(file_id, var_name);
-fprintf(file_id, ['[' num2str(data_len(1)) '] PROGMEM = {']);
+if data_len(1) == 1 %if not array
+    
+    % print var header
+    fprintf(file_id, 'const ');
+    fprintf(file_id, data_type);
+    fprintf(file_id, ' ');
+    fprintf(file_id, var_name);
+    fprintf(file_id, [' PROGMEM = ']);
+
+    % print C array
+    if strcmp(data_type,'float')
+            fprintf(file_id, '%.2f', data_src);  
+    elseif strcmp(data_type,'uint8_t')
+            fprintf(file_id, '%d', data_src);
+    end
+
+    % print the last element in the array
+    fprintf(file_id, ';\r\n');
+    
+else % if is array
+    
+    % print array header
+    fprintf(file_id, 'const ');
+    fprintf(file_id, data_type);
+    fprintf(file_id, ' ');
+    fprintf(file_id, var_name);
+    fprintf(file_id, ['[' num2str(data_len(1)) '] PROGMEM = {']);
 
 
 
-% print C array
-if strcmp(data_type,'float')
-    for i=1:data_len(1)-1
-        % element 1 to n-1
-        fprintf(file_id, '%.2f, ', data_src(i));
-    end      
-elseif strcmp(data_type,'uint8_t')
-    for i=1:data_len(1)-1
-        % element 1 to n-1
-        fprintf(file_id, '%d, ', data_src(i));
-    end  
+    % print C array
+    if strcmp(data_type,'float')
+        for i=1:data_len(1)-1
+            % element 1 to n-1
+            fprintf(file_id, '%.2f, ', data_src(i));
+        end      
+    elseif strcmp(data_type,'uint8_t')
+        for i=1:data_len(1)-1
+            % element 1 to n-1
+            fprintf(file_id, '%d, ', data_src(i));
+        end  
+    end
+
+
+    % print the last element in the array
+    fprintf(file_id, '%d};\r\n', data_src(data_len(1)));
+
 end
-
-
-% print the last element in the array
-fprintf(file_id, '%d};\r\n', data_src(data_len(1)));
 
 end
 

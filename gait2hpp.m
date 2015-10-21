@@ -23,18 +23,25 @@ Mem_size = 0;
 % Print data array
 % Mem_size = Mem_size + printCppArray( file_id, data_src, data_type )
 
-% Determine absolute max pulse width levels for each channel:
-
+% Walk L
 for board_id = 1:2
     for channel_id = 1:12
         Mem_size = Mem_size + printCppArray( fid, ['gait_walk_L_B' num2str(board_id) '_CH' num2str(dec2hex(channel_id)) '_PP'] , eval(['gait.Walk.Lstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(:,1)']), 'float' );
         Mem_size = Mem_size + printCppArray( fid, ['gait_walk_L_B' num2str(board_id) '_CH' num2str(dec2hex(channel_id)) '_PW'] , eval(['gait.Walk.Lstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(:,2)']), 'uint8_t' );
-        Mem_size = Mem_size + printCppArray( fid, ['gait_walk_L_B' num2str(board_id) '_CH' num2str(dec2hex(channel_id)) '_IPI'] , eval(['gait.Walk.Lstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(:,3)']), 'uint8_t' );
+        Mem_size = Mem_size + printCppArray( fid, ['gait_walk_L_B' num2str(board_id) '_CH' num2str(dec2hex(channel_id)) '_IPI'] , eval(['gait.Walk.Lstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(1,3)']), 'uint8_t' );
         fprintf(fid, '\r\n');        
     end
 end
 
-
+% Walk R
+for board_id = 1:2
+    for channel_id = 1:12
+        Mem_size = Mem_size + printCppArray( fid, ['gait_walk_R_B' num2str(board_id) '_CH' num2str(dec2hex(channel_id)) '_PP'] , eval(['gait.Walk.Rstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(:,1)']), 'float' );
+        Mem_size = Mem_size + printCppArray( fid, ['gait_walk_R_B' num2str(board_id) '_CH' num2str(dec2hex(channel_id)) '_PW'] , eval(['gait.Walk.Rstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(:,2)']), 'uint8_t' );
+        Mem_size = Mem_size + printCppArray( fid, ['gait_walk_R_B' num2str(board_id) '_CH' num2str(dec2hex(channel_id)) '_IPI'] , eval(['gait.Walk.Rstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(1,3)']), 'uint8_t' );
+        fprintf(fid, '\r\n');        
+    end
+end
 
 
 % print file ending

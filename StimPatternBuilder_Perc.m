@@ -24,29 +24,30 @@ pattern.channel_delay = [pattern.channel_delay, pattern.channel_delay]';
 
 %% channel data
 
+% Walk
 % board 1
-pattern.board_data(:,:,1) =  xlsread(excel_filename, 'Walk', 'C42:H137','basic');
+pattern.walk_data(:,:,1) =  xlsread(excel_filename, 'Walk', 'C42:H137','basic');
 % board 2
-pattern.board_data(:,:,2) =  xlsread(excel_filename, 'Walk', 'K42:P137','basic');
+pattern.walk_data(:,:,2) =  xlsread(excel_filename, 'Walk', 'K42:P137','basic');
 
 % pattern.channel_data()
 for j=0:1  % board loop
     for i=0:11 % channel loop
       % Left step
         % Percent Pattern
-        pattern.channel_data(:,1,i+1+j*12) = pattern.board_data(1+i*8:8+i*8,1,j+1);
+        pattern.channel_data(:,1,i+1+j*12) = pattern.walk_data(1+i*8:8+i*8,1,j+1);
         % Pulse Width (us)
-        pattern.channel_data(:,2,i+1+j*12) = pattern.board_data(1+i*8:8+i*8,2,j+1);
+        pattern.channel_data(:,2,i+1+j*12) = pattern.walk_data(1+i*8:8+i*8,2,j+1);
         % IPI (ms)
-        pattern.channel_data(:,3,i+1+j*12) = pattern.board_data(1+i*8,3,j+1);
+        pattern.channel_data(:,3,i+1+j*12) = pattern.walk_data(1+i*8,3,j+1);
                 
       % Right step
         % Percent Pattern
-        pattern.channel_data(:,4,i+1+j*12) = pattern.board_data(1+i*8:8+i*8,4,j+1);
+        pattern.channel_data(:,4,i+1+j*12) = pattern.walk_data(1+i*8:8+i*8,4,j+1);
         % Pulse Width (us)
-        pattern.channel_data(:,5,i+1+j*12) = pattern.board_data(1+i*8:8+i*8,5,j+1);
+        pattern.channel_data(:,5,i+1+j*12) = pattern.walk_data(1+i*8:8+i*8,5,j+1);
         % IPI (ms)
-        pattern.channel_data(:,6,i+1+j*12) = pattern.board_data(1+i*8,6,j+1);
+        pattern.channel_data(:,6,i+1+j*12) = pattern.walk_data(1+i*8,6,j+1);
         
     end
 end
