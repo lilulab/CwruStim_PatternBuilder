@@ -14,7 +14,11 @@
 // Left Step ---------
 
 // Percent Pattern
+<<<<<<< HEAD
 const float gait_walk_L_B1_PP[12][8] PROGMEM = { 
+=======
+const float gait_walk_L_B1_PP[][] PROGMEM = { 
+>>>>>>> 6c4b5af8620ca3d1dfec14c15789e86bc993edec
 		{ 0.00,	10.00,	17.36,	19.79,	64.24,	75.35,	92.01,	100 },
 		{ 0.00,	10.00,	17.36,	19.79,	69.79,	92.01,	95.00,	100 },
 		{ 0.00,	10.00,	17.36,	19.79,	67.01,	80.90,	90.00,	100 },
@@ -31,7 +35,11 @@ const float gait_walk_L_B1_PP[12][8] PROGMEM = {
 
 
 // Pulse Width
+<<<<<<< HEAD
 const uint8_t gait_walk_L_B1_PW[12][8] PROGMEM = { 
+=======
+const uint8_t gait_walk_L_B1_PW[][] PROGMEM = { 
+>>>>>>> 6c4b5af8620ca3d1dfec14c15789e86bc993edec
 		{ 100,	100,	100,	0,		0,		150,	131,	131 },
 		{ 0,		0,		0,		60,		60,		0,		0,		0 },
 		{ 25,		25,		25,		0,		0,		25,		25,		25 },
@@ -48,14 +56,22 @@ const uint8_t gait_walk_L_B1_PW[12][8] PROGMEM = {
 
 
 // Inter Phase Interval
+<<<<<<< HEAD
 const uint8_t gait_walk_L_B1_IPI[12] PROGMEM = 
+=======
+const uint8_t gait_walk_L_B1_IPI[] PROGMEM = 
+>>>>>>> 6c4b5af8620ca3d1dfec14c15789e86bc993edec
 		{  60 , 30 , 60 , 60 , 60 , 30 , 30 , 30 , 60 , 60 , 60 , 60 };
 
 
 // Right Step ---------
 
 // Percent Pattern
+<<<<<<< HEAD
 const float gait_walk_R_B1_PP[12][8] PROGMEM = { 
+=======
+const float gait_walk_R_B1_PP[][] PROGMEM = { 
+>>>>>>> 6c4b5af8620ca3d1dfec14c15789e86bc993edec
 		{ 0.00,	4.51,	14.93,	57.00,	79.00,	85.00,	95.00,	100 },
 		{ 0.00,	10.00,	50.00,	75.00,	88.00,	94.00,	95.00,	100 },
 		{ 0.00,	10.00,	20.00,	50.00,	93.06,	97.00,	99.00,	100 },
@@ -72,7 +88,11 @@ const float gait_walk_R_B1_PP[12][8] PROGMEM = {
 
 
 // Pulse Width
+<<<<<<< HEAD
 const uint8_t gait_walk_R_B1_PW[12][8] PROGMEM = { 
+=======
+const uint8_t gait_walk_R_B1_PW[][] PROGMEM = { 
+>>>>>>> 6c4b5af8620ca3d1dfec14c15789e86bc993edec
 		{ 131,	120,	100,	100,	100,	100,	100,	100 },
 		{ 0,		0,		0,		0,		0,		0,		0,		0 },
 		{ 25,		25,		25,		25,		25,		25,		25,		25 },
@@ -89,7 +109,11 @@ const uint8_t gait_walk_R_B1_PW[12][8] PROGMEM = {
 
 
 // Inter Phase Interval
+<<<<<<< HEAD
 const uint8_t gait_walk_R_B1_IPI[12] PROGMEM = 
+=======
+const uint8_t gait_walk_R_B1_IPI[] PROGMEM = 
+>>>>>>> 6c4b5af8620ca3d1dfec14c15789e86bc993edec
 		{  60 , 60 , 30 , 30 , 30 , 60 , 60 , 60 , 60 , 60 , 60 , 60 };
 
 
@@ -99,7 +123,11 @@ const uint8_t gait_walk_R_B1_IPI[12] PROGMEM =
 // Left Step ---------
 
 // Percent Pattern
+<<<<<<< HEAD
 const float gait_walk_L_B2_PP[12][8] PROGMEM = { 
+=======
+const float gait_walk_L_B2_PP[][] PROGMEM = { 
+>>>>>>> 6c4b5af8620ca3d1dfec14c15789e86bc993edec
 		{ 0.00,	25.00,	50.00,	75.00,	88.00,	94.00,	95.00,	100 },
 		{ 0.00,	10.00,	50.00,	75.00,	88.00,	94.00,	95.00,	100 },
 		{ 0.00,	10.00,	50.00,	75.00,	88.00,	94.00,	95.00,	100 },
@@ -116,7 +144,11 @@ const float gait_walk_L_B2_PP[12][8] PROGMEM = {
 
 
 // Pulse Width
+<<<<<<< HEAD
 const uint8_t gait_walk_L_B2_PW[12][8] PROGMEM = { 
+=======
+const uint8_t gait_walk_L_B2_PW[][] PROGMEM = { 
+>>>>>>> 6c4b5af8620ca3d1dfec14c15789e86bc993edec
 		{ 150,	150,	150,	150,	150,	150,	150,	150 },
 		{ 0,		0,		0,		0,		0,		0,		0,		0 },
 		{ 110,	110,	110,	110,	110,	110,	110,	110 },
@@ -133,14 +165,22 @@ const uint8_t gait_walk_L_B2_PW[12][8] PROGMEM = {
 
 
 // Inter Phase Interval
+<<<<<<< HEAD
 const uint8_t gait_walk_L_B2_IPI[12] PROGMEM = 
+=======
+const uint8_t gait_walk_L_B2_IPI[] PROGMEM = 
+>>>>>>> 6c4b5af8620ca3d1dfec14c15789e86bc993edec
 		{  60 , 60 , 30 , 30 , 60 , 60 , 60 , 60 , 60 , 60 , 60 , 60 };
 
 
 // Right Step ---------
 
 // Percent Pattern
+<<<<<<< HEAD
 const float gait_walk_R_B2_PP[12][8] PROGMEM = { 
+=======
+const float gait_walk_R_B2_PP[][] PROGMEM = { 
+>>>>>>> 6c4b5af8620ca3d1dfec14c15789e86bc993edec
 		{ 0.00,	5.00,	9.38,	11.81,	61.81,	93.06,	95.00,	100 },
 		{ 0.00,	5.00,	9.38,	11.81,	77.43,	93.06,	95.00,	100 },
 		{ 0.00,	4.00,	8.00,	9.38,	11.81,	86.81,	93.06,	100 },
@@ -157,7 +197,11 @@ const float gait_walk_R_B2_PP[12][8] PROGMEM = {
 
 
 // Pulse Width
+<<<<<<< HEAD
 const uint8_t gait_walk_R_B2_PW[12][8] PROGMEM = { 
+=======
+const uint8_t gait_walk_R_B2_PW[][] PROGMEM = { 
+>>>>>>> 6c4b5af8620ca3d1dfec14c15789e86bc993edec
 		{ 150,	150,	150,	0,		0,		150,	150,	150 },
 		{ 0,		0,		0,		150,	150,	0,		0,		0 },
 		{ 110,	110,	110,	110,	0,		0,		108,	110 },
@@ -174,7 +218,11 @@ const uint8_t gait_walk_R_B2_PW[12][8] PROGMEM = {
 
 
 // Inter Phase Interval
+<<<<<<< HEAD
 const uint8_t gait_walk_R_B2_IPI[12] PROGMEM = 
+=======
+const uint8_t gait_walk_R_B2_IPI[] PROGMEM = 
+>>>>>>> 6c4b5af8620ca3d1dfec14c15789e86bc993edec
 		{  60 , 30 , 60 , 60 , 60 , 30 , 30 , 30 , 60 , 60 , 60 , 60 };
 
 // File End
