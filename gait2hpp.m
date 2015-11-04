@@ -32,11 +32,7 @@ for board_id = 1:2
     fprintf(fid, ['\r\n// Left Step ---------\r\n']);
     % percent pattern
     fprintf(fid, ['\r\n// Percent Pattern\r\n']);
-<<<<<<< HEAD
     fprintf(fid, ['const float gait_walk_L_B' num2str(board_id) '_PP[12][8] PROGMEM = { \r\n']);
-=======
-    fprintf(fid, ['const float gait_walk_L_B' num2str(board_id) '_PP[][] PROGMEM = { \r\n']);
->>>>>>> 6c4b5af8620ca3d1dfec14c15789e86bc993edec
     for channel_id = 1:12
         fprintf(fid, '\t\t');
         data_src = eval(['gait.Walk.Lstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(:,1)']); %PP
@@ -50,11 +46,7 @@ for board_id = 1:2
 
     % Print Pulse width
     fprintf(fid, ['\r\n// Pulse Width\r\n']);
-<<<<<<< HEAD
     fprintf(fid, ['const uint8_t gait_walk_L_B' num2str(board_id) '_PW[12][8] PROGMEM = { \r\n']);
-=======
-    fprintf(fid, ['const uint8_t gait_walk_L_B' num2str(board_id) '_PW[][] PROGMEM = { \r\n']);
->>>>>>> 6c4b5af8620ca3d1dfec14c15789e86bc993edec
     for channel_id = 1:12
         fprintf(fid, '\t\t');
         data_src = eval(['gait.Walk.Lstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(:,2)']); %PW
@@ -68,11 +60,7 @@ for board_id = 1:2
 
     % Print Inter Phase Interval
     fprintf(fid, ['\r\n// Inter Phase Interval\r\n']);
-<<<<<<< HEAD
     fprintf(fid, ['const uint8_t gait_walk_L_B' num2str(board_id) '_IPI[8] PROGMEM = \r\n']);
-=======
-    fprintf(fid, ['const uint8_t gait_walk_L_B' num2str(board_id) '_IPI[] PROGMEM = \r\n']);
->>>>>>> 6c4b5af8620ca3d1dfec14c15789e86bc993edec
     fprintf(fid, '\t\t{ ');
     for channel_id = 1:12
         data_src = eval(['gait.Walk.Lstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(1,3)']); %IPI
@@ -89,11 +77,7 @@ for board_id = 1:2
     fprintf(fid, ['\r\n// Right Step ---------\r\n']);
     % percent pattern
     fprintf(fid, ['\r\n// Percent Pattern\r\n']);
-<<<<<<< HEAD
     fprintf(fid, ['const float gait_walk_R_B' num2str(board_id) '_PP[12][8] PROGMEM = { \r\n']);
-=======
-    fprintf(fid, ['const float gait_walk_R_B' num2str(board_id) '_PP[][] PROGMEM = { \r\n']);
->>>>>>> 6c4b5af8620ca3d1dfec14c15789e86bc993edec
     for channel_id = 1:12
         fprintf(fid, '\t\t');
         data_src = eval(['gait.Walk.Rstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(:,1)']); %PP
@@ -107,11 +91,7 @@ for board_id = 1:2
 
     % Print Pulse width
     fprintf(fid, ['\r\n// Pulse Width\r\n']);
-<<<<<<< HEAD
     fprintf(fid, ['const uint8_t gait_walk_R_B' num2str(board_id) '_PW[12][8] PROGMEM = { \r\n']);
-=======
-    fprintf(fid, ['const uint8_t gait_walk_R_B' num2str(board_id) '_PW[][] PROGMEM = { \r\n']);
->>>>>>> 6c4b5af8620ca3d1dfec14c15789e86bc993edec
     for channel_id = 1:12
         fprintf(fid, '\t\t');
         data_src = eval(['gait.Walk.Rstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(:,2)']); %PW
@@ -125,11 +105,7 @@ for board_id = 1:2
 
     % Print Inter Phase Interval
     fprintf(fid, ['\r\n// Inter Phase Interval\r\n']);
-<<<<<<< HEAD
     fprintf(fid, ['const uint8_t gait_walk_R_B' num2str(board_id) '_IPI[8] PROGMEM = \r\n']);
-=======
-    fprintf(fid, ['const uint8_t gait_walk_R_B' num2str(board_id) '_IPI[] PROGMEM = \r\n']);
->>>>>>> 6c4b5af8620ca3d1dfec14c15789e86bc993edec
     fprintf(fid, '\t\t{ ');
     for channel_id = 1:12
         data_src = eval(['gait.Walk.Rstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(1,3)']); %IPI
