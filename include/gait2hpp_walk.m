@@ -1,24 +1,4 @@
 % read gait structure and convert it to Cpp Head file
-%% Generate head files
-% open head file
-filename = input('Create file(*.h): ', 's');
-clear fid
-delete (filename);
-fid = fopen(filename, 'a');
-
-% print a comment title, followed by a blank line
-fprintf(fid, '// StimPattern.h - Head file for storage Stim Patterns.\r\n');
-fprintf(fid, '// Created by Lu Li (lxl361@case), SEP, 2015.\r\n');
-fprintf(fid, '// Version 1.0\r\n');
-fprintf(fid, '// Repo: https://github.com/lilulab/CwruStim_beta\r\n\r\n');
-
-% print include
-fprintf(fid, '#include <stdint.h>\r\n\r\n');
-fprintf(fid, '#include <avr/pgmspace.h>\r\n\r\n');
-
-
-% clear memory size counter.
-Mem_size = 0;
 
 % Print data array
 % Mem_size = Mem_size + printCppArray( file_id, data_src, data_type )
@@ -27,12 +7,12 @@ fprintf(fid, ['\r\n// ------ Walk ------\r\n']);
 
 % Channel Amplitude
 fprintf(fid, ['\r\n// Channel Amplitude \r\n']);
-fprintf(fid, ['const uint8_t gait_walk_L_duration PROGMEM = ']);
+fprintf(fid, ['const uint8_t gait_walk_L_amplitude[12] PROGMEM = ']);
 data_src = gait.Walk.Channel_amplitude.L;
 Mem_size = Mem_size + printCppBracket(fid, data_src, 'uint8_t', '{', '}');
 fprintf(fid, ';\r\n');
 
-fprintf(fid, ['const uint8_t gait_walk_R_duration PROGMEM = ']);
+fprintf(fid, ['const uint8_t gait_walk_R_amplitude[12] PROGMEM = ']);
 data_src = gait.Walk.Channel_amplitude.R;
 Mem_size = Mem_size + printCppBracket(fid, data_src, 'uint8_t', '{', '}');
 fprintf(fid, ';\r\n');
@@ -84,7 +64,7 @@ for board_id = 1:2
 
     % Print Inter Phase Interval
     fprintf(fid, ['\r\n// Inter Phase Interval\r\n']);
-    fprintf(fid, ['const uint8_t gait_walk_L_B' num2str(board_id) '_IPI[8] PROGMEM = \r\n']);
+    fprintf(fid, ['const uint8_t gait_walk_L_B' num2str(board_id) '_IPI[12] PROGMEM = \r\n']);
     fprintf(fid, '\t\t{ ');
     for channel_id = 1:12
         data_src = eval(['gait.Walk.Lstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(1,3)']); %IPI
@@ -131,7 +111,7 @@ for board_id = 1:2
 
     % Print Inter Phase Interval
     fprintf(fid, ['\r\n// Inter Phase Interval\r\n']);
-    fprintf(fid, ['const uint8_t gait_walk_R_B' num2str(board_id) '_IPI[8] PROGMEM = \r\n']);
+    fprintf(fid, ['const uint8_t gait_walk_R_B' num2str(board_id) '_IPI[12] PROGMEM = \r\n']);
     fprintf(fid, '\t\t{ ');
     for channel_id = 1:12
         data_src = eval(['gait.Walk.Rstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(1,3)']); %IPI
@@ -165,16 +145,7 @@ end
 %     end
 % end
 
-
-% print file ending
-fprintf(fid, '// File End\r\n\r\n');
-
-% close file
-fclose(fid);
-disp('-------------------------------------------------------------');
-disp('Stim Pattern C Head File saved.');
+display ('Walk pattern saved to head file.');
 str = ['    - Use EEPROM memory total size = ',num2str(Mem_size(1)/1024),'KB.'];
 disp(str);
-disp('Note:');
-disp('    - Arduino Uno:    32 KB FLASH, and 1KB EEPROM storage.');
-disp('    - Arduino Mega:   256KB FLASH, and 4KB EEPROM storage.');
+display (' ');

@@ -1,13 +1,4 @@
-%% Load Excel File
-
-clear all
-
-% add data folder path
-addpath('ExcelData\PERC');
-
-% GUI load excel
-[excel_filename, pathname] = uigetfile('*.xlsm*', 'Please select desired stim pattern parameter file');
-
+display ('Walk Decoding ...');
 
 %% read data from file
 
@@ -30,24 +21,24 @@ pattern.walk_data(:,:,1) =  xlsread(excel_filename, 'Walk', 'C42:H137','basic');
 % board 2
 pattern.walk_data(:,:,2) =  xlsread(excel_filename, 'Walk', 'K42:P137','basic');
 
-% pattern.channel_data()
+% pattern.walk_channel_data()
 for j=0:1  % board loop
     for i=0:11 % channel loop
       % Left step
         % Percent Pattern
-        pattern.channel_data(:,1,i+1+j*12) = pattern.walk_data(1+i*8:8+i*8,1,j+1);
+        pattern.walk_channel_data(:,1,i+1+j*12) = pattern.walk_data(1+i*8:8+i*8,1,j+1);
         % Pulse Width (us)
-        pattern.channel_data(:,2,i+1+j*12) = pattern.walk_data(1+i*8:8+i*8,2,j+1);
+        pattern.walk_channel_data(:,2,i+1+j*12) = pattern.walk_data(1+i*8:8+i*8,2,j+1);
         % IPI (ms)
-        pattern.channel_data(:,3,i+1+j*12) = pattern.walk_data(1+i*8,3,j+1);
+        pattern.walk_channel_data(:,3,i+1+j*12) = pattern.walk_data(1+i*8,3,j+1);
                 
       % Right step
         % Percent Pattern
-        pattern.channel_data(:,4,i+1+j*12) = pattern.walk_data(1+i*8:8+i*8,4,j+1);
+        pattern.walk_channel_data(:,4,i+1+j*12) = pattern.walk_data(1+i*8:8+i*8,4,j+1);
         % Pulse Width (us)
-        pattern.channel_data(:,5,i+1+j*12) = pattern.walk_data(1+i*8:8+i*8,5,j+1);
+        pattern.walk_channel_data(:,5,i+1+j*12) = pattern.walk_data(1+i*8:8+i*8,5,j+1);
         % IPI (ms)
-        pattern.channel_data(:,6,i+1+j*12) = pattern.walk_data(1+i*8,6,j+1);
+        pattern.walk_channel_data(:,6,i+1+j*12) = pattern.walk_data(1+i*8,6,j+1);
         
     end
 end
@@ -79,11 +70,11 @@ for j=0:1
             varname = matlab.lang.makeUniqueStrings(str);
             
             % L
-            src = ['channel_data(:,1:3,i+1+j*12);' ];
+            src = ['walk_channel_data(:,1:3,i+1+j*12);' ];
             eval(['gait.' 'Walk.' 'Lstep.' varname ' = ' 'pattern.' src]);
             
             % R
-            src = ['channel_data(:,4:6,i+1+j*12);' ];
+            src = ['walk_channel_data(:,4:6,i+1+j*12);' ];
             eval(['gait.' 'Walk.' 'Rstep.' varname ' = ' 'pattern.' src]);            
             
             %display ([i j]);
@@ -91,9 +82,8 @@ for j=0:1
 
 end
 
-display ('Done!');
+display ('Walk Decoding - Done!');
+display (' ');
 
-%% Gait pattern to Cpp head files
-gait2hpp
 
 
