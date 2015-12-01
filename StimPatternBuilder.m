@@ -9,4 +9,4 @@
 % StimPatternBuilder_FNS
 
 %% Run Perc
-StimPatternBuilder_Perc
+StimPatternBuilder_Perc_Walk

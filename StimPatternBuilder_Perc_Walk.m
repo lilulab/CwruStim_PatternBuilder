@@ -52,8 +52,22 @@ for j=0:1  % board loop
     end
 end
 
-%% Gait pattern to Cpp head files
+%% Reorganize data to gait structure
 
+% walk
+
+% step duration
+str = num2str(pattern.step_duration(1));
+eval(['gait.Walk.Lstep.duration = ' str ';']);
+
+str = num2str(pattern.step_duration(2));
+eval(['gait.Walk.Rstep.duration = ' str ';']);
+
+% Amplitude
+eval(['gait.Walk.Channel_amplitude.L = pattern.channel_amplitude(1:12);']);
+eval(['gait.Walk.Channel_amplitude.R = pattern.channel_amplitude(13:24);']);
+
+% gait pattern PP,PW,IPI
 % board loop
 for j=0:1
         % channel loop
@@ -79,6 +93,7 @@ end
 
 display ('Done!');
 
+%% Gait pattern to Cpp head files
 gait2hpp
 
 

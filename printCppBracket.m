@@ -15,7 +15,7 @@ data_len = size(data_src);
             % element 1 to n-1
             fprintf(file_id, '%.2f,\t', data_src(i));
         end      
-    elseif strcmp(data_type,'uint8_t')
+    elseif strcmp(data_type,'uint8_t') || strcmp(data_type,'uint16_t')
         for i=1:data_len(1)-1
             % element 1 to n-1
             fprintf(file_id, '%d,\t', data_src(i));
