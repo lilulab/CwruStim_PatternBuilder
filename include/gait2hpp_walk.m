@@ -7,12 +7,12 @@ fprintf(fid, ['\r\n// ------ Walk ------\r\n']);
 
 % Channel Amplitude
 fprintf(fid, ['\r\n// Channel Amplitude \r\n']);
-fprintf(fid, ['const uint8_t gait_walk_L_amplitude[12] PROGMEM = ']);
+fprintf(fid, ['const uint8_t gait_B1_AMP[12] = ']);
 data_src = gait.Walk.Channel_amplitude.L;
 Mem_size = Mem_size + printCppBracket(fid, data_src, 'uint8_t', '{', '}');
 fprintf(fid, ';\r\n');
 
-fprintf(fid, ['const uint8_t gait_walk_R_amplitude[12] PROGMEM = ']);
+fprintf(fid, ['const uint8_t gait_B2_AMP[12] = ']);
 data_src = gait.Walk.Channel_amplitude.R;
 Mem_size = Mem_size + printCppBracket(fid, data_src, 'uint8_t', '{', '}');
 fprintf(fid, ';\r\n');
@@ -20,8 +20,8 @@ fprintf(fid, ';\r\n');
 
 % Step duration
 fprintf(fid, ['\r\n// Step Duration \r\n']);
-fprintf(fid, ['const float gait_walk_L_duration PROGMEM = ' num2str(gait.Walk.Lstep.duration) '; \r\n']);
-fprintf(fid, ['const float gait_walk_R_duration PROGMEM = ' num2str(gait.Walk.Rstep.duration) '; \r\n']);
+fprintf(fid, ['const float gait_walk_L_duration = ' num2str(gait.Walk.Lstep.duration) '; \r\n']);
+fprintf(fid, ['const float gait_walk_R_duration = ' num2str(gait.Walk.Rstep.duration) '; \r\n']);
 
 
 % Walk L
@@ -34,7 +34,7 @@ for board_id = 1:2
     
     % percent pattern
     fprintf(fid, ['\r\n// Percent Pattern\r\n']);
-    fprintf(fid, ['const uint16_t gait_walk_L_B' num2str(board_id) '_PP[12][8] PROGMEM = { \r\n']);
+    fprintf(fid, ['const uint16_t gait_walk_L_B' num2str(board_id) '_PP[12][8] = { \r\n']);
     for channel_id = 1:12
         fprintf(fid, '\t\t');
         data_src = eval(['gait.Walk.Lstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(:,1)']); %PP
@@ -50,7 +50,7 @@ for board_id = 1:2
 
     % Print Pulse width
     fprintf(fid, ['\r\n// Pulse Width\r\n']);
-    fprintf(fid, ['const uint8_t gait_walk_L_B' num2str(board_id) '_PW[12][8] PROGMEM = { \r\n']);
+    fprintf(fid, ['const uint8_t gait_walk_L_B' num2str(board_id) '_PW[12][8] = { \r\n']);
     for channel_id = 1:12
         fprintf(fid, '\t\t');
         data_src = eval(['gait.Walk.Lstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(:,2)']); %PW
@@ -64,7 +64,7 @@ for board_id = 1:2
 
     % Print Inter Phase Interval
     fprintf(fid, ['\r\n// Inter Phase Interval\r\n']);
-    fprintf(fid, ['const uint8_t gait_walk_L_B' num2str(board_id) '_IPI[12] PROGMEM = \r\n']);
+    fprintf(fid, ['const uint8_t gait_walk_L_B' num2str(board_id) '_IPI[12] = \r\n']);
     fprintf(fid, '\t\t{ ');
     for channel_id = 1:12
         data_src = eval(['gait.Walk.Lstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(1,3)']); %IPI
@@ -81,7 +81,7 @@ for board_id = 1:2
     fprintf(fid, ['\r\n// Right Step ---------\r\n']);
     % percent pattern
     fprintf(fid, ['\r\n// Percent Pattern\r\n']);
-    fprintf(fid, ['const uint16_t gait_walk_R_B' num2str(board_id) '_PP[12][8] PROGMEM = { \r\n']);
+    fprintf(fid, ['const uint16_t gait_walk_R_B' num2str(board_id) '_PP[12][8] = { \r\n']);
     for channel_id = 1:12
         fprintf(fid, '\t\t');
         data_src = eval(['gait.Walk.Rstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(:,1)']); %PP
@@ -97,7 +97,7 @@ for board_id = 1:2
 
     % Print Pulse width
     fprintf(fid, ['\r\n// Pulse Width\r\n']);
-    fprintf(fid, ['const uint8_t gait_walk_R_B' num2str(board_id) '_PW[12][8] PROGMEM = { \r\n']);
+    fprintf(fid, ['const uint8_t gait_walk_R_B' num2str(board_id) '_PW[12][8] = { \r\n']);
     for channel_id = 1:12
         fprintf(fid, '\t\t');
         data_src = eval(['gait.Walk.Rstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(:,2)']); %PW
@@ -111,7 +111,7 @@ for board_id = 1:2
 
     % Print Inter Phase Interval
     fprintf(fid, ['\r\n// Inter Phase Interval\r\n']);
-    fprintf(fid, ['const uint8_t gait_walk_R_B' num2str(board_id) '_IPI[12] PROGMEM = \r\n']);
+    fprintf(fid, ['const uint8_t gait_walk_R_B' num2str(board_id) '_IPI[12] = \r\n']);
     fprintf(fid, '\t\t{ ');
     for channel_id = 1:12
         data_src = eval(['gait.Walk.Rstep.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(1,3)']); %IPI

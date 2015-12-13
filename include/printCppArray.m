@@ -16,7 +16,7 @@ if data_len(1) == 1 %if not array
     fprintf(file_id, data_type);
     fprintf(file_id, ' ');
     fprintf(file_id, var_name);
-    fprintf(file_id, [' PROGMEM = ']);
+    %fprintf(file_id, [' PROGMEM = ']);
 
     % print C array
     if strcmp(data_type,'float')
@@ -35,8 +35,8 @@ else % if is array
     fprintf(file_id, data_type);
     fprintf(file_id, ' ');
     fprintf(file_id, var_name);
-    fprintf(file_id, ['[' num2str(data_len(1)) '] PROGMEM = {']);
-
+    %fprintf(file_id, ['[' num2str(data_len(1)) '] PROGMEM = {']);
+    fprintf(file_id, ['[' num2str(data_len(1)) '] = {']);
 
 
     % print C array

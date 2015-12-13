@@ -9,7 +9,7 @@ fprintf(fid, ['\r\n// ------ Sit ------\r\n']);
 
 % Step duration
 fprintf(fid, ['\r\n// Step Duration \r\n']);
-fprintf(fid, ['const float gait_sit_duration PROGMEM = ' num2str(gait.Sit.duration) '; \r\n']);
+fprintf(fid, ['const float gait_sit_duration = ' num2str(gait.Sit.duration) '; \r\n']);
 
 
 % Sit
@@ -21,7 +21,7 @@ for board_id = 1:2
     
     % percent pattern
     fprintf(fid, ['\r\n// Percent Pattern\r\n']);
-    fprintf(fid, ['const uint16_t gait_sit_B' num2str(board_id) '_PP[12][8] PROGMEM = { \r\n']);
+    fprintf(fid, ['const uint16_t gait_sit_B' num2str(board_id) '_PP[12][8] = { \r\n']);
     for channel_id = 1:12
         fprintf(fid, '\t\t');
         data_src = eval(['gait.Sit.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(:,1)']); %PP
@@ -37,7 +37,7 @@ for board_id = 1:2
 
     % Print Pulse width
     fprintf(fid, ['\r\n// Pulse Width\r\n']);
-    fprintf(fid, ['const uint8_t gait_sit_B' num2str(board_id) '_PW[12][8] PROGMEM = { \r\n']);
+    fprintf(fid, ['const uint8_t gait_sit_B' num2str(board_id) '_PW[12][8] = { \r\n']);
     for channel_id = 1:12
         fprintf(fid, '\t\t');
         data_src = eval(['gait.Sit.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(:,2)']); %PW
@@ -51,7 +51,7 @@ for board_id = 1:2
 
     % Print Inter Phase Interval
     fprintf(fid, ['\r\n// Inter Phase Interval\r\n']);
-    fprintf(fid, ['const uint8_t gait_sit_B' num2str(board_id) '_IPI[12] PROGMEM = \r\n']);
+    fprintf(fid, ['const uint8_t gait_sit_B' num2str(board_id) '_IPI[12] = \r\n']);
     fprintf(fid, '\t\t{ ');
     for channel_id = 1:12
         data_src = eval(['gait.Sit.board' num2str(board_id) '.CH' num2str(dec2hex(channel_id)) '(1,3)']); %IPI
