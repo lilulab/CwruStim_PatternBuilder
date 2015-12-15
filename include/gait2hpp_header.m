@@ -1,5 +1,11 @@
 % create/open head file
-filename = input('Create file(*.h): ', 's');
+% filename = input('Create file(*.h): ', 's');
+
+title = 'Create C++ Header file(*.h):';
+msg = ' Create file: (For example type "gait.h").';
+answer = inputdlg(msg,title);
+filename = char(answer);
+
 clear fid
 delete (filename);
 fid = fopen(filename, 'a');
