@@ -1,0 +1,121 @@
+<deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
+  <configuration file="E:\LLGoogleDriveAndrew\Sync - Work\CWRU\HNPv2\CodeRepo\CwruStim_PatternBuilder\StimPatternBuilder.prj" location="E:\LLGoogleDriveAndrew\Sync - Work\CWRU\HNPv2\CodeRepo\CwruStim_PatternBuilder" name="StimPatternBuilder" preferred-package-location="E:\LLGoogleDriveAndrew\Sync - Work\CWRU\HNPv2\CodeRepo\CwruStim_PatternBuilder\build\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
+    <param.appname>StimPatternBuilder</param.appname>
+    <param.icon />
+    <param.icons />
+    <param.version>1.0</param.version>
+    <param.authnamewatermark>Lu Li</param.authnamewatermark>
+    <param.email>lxl361[a]case[dot]edu</param.email>
+    <param.company>CWRU Biorobotics Lab</param.company>
+    <param.summary />
+    <param.description />
+    <param.screenshot />
+    <param.guid />
+    <param.installpath.string>\CWRU Biorobotics Lab\StimPatternBuilder\</param.installpath.string>
+    <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
+    <param.logo />
+    <param.install.notes />
+    <param.target.install.notes />
+    <param.intermediate>${PROJECT_ROOT}\build\for_testing</param.intermediate>
+    <param.files.only>${PROJECT_ROOT}\build\for_redistribution_files_only</param.files.only>
+    <param.output>${PROJECT_ROOT}\build\for_redistribution</param.output>
+    <param.enable.clean.build>false</param.enable.clean.build>
+    <param.user.defined.mcr.options />
+    <param.embed.ctf>true</param.embed.ctf>
+    <param.target.type>subtarget.standalone</param.target.type>
+    <param.support.packages />
+    <param.required.mcr.products>
+      <item>35000</item>
+      <item>35010</item>
+      <item>35001</item>
+    </param.required.mcr.products>
+    <param.web.mcr>false</param.web.mcr>
+    <param.package.mcr>true</param.package.mcr>
+    <param.no.mcr>false</param.no.mcr>
+    <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
+    <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
+    <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
+    <param.windows.command.prompt>true</param.windows.command.prompt>
+    <param.create.log>false</param.create.log>
+    <param.log.file />
+    <unset>
+      <param.icon />
+      <param.icons />
+      <param.version />
+      <param.summary />
+      <param.description />
+      <param.screenshot />
+      <param.guid />
+      <param.installpath.string />
+      <param.installpath.combo />
+      <param.logo />
+      <param.target.install.notes />
+      <param.enable.clean.build />
+      <param.user.defined.mcr.options />
+      <param.embed.ctf />
+      <param.target.type />
+      <param.support.packages />
+      <param.no.mcr />
+      <param.web.mcr.name />
+      <param.package.mcr.name />
+      <param.no.mcr.name />
+      <param.windows.command.prompt />
+      <param.create.log />
+      <param.log.file />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}\StimPatternBuilder.m</file>
+    </fileset.main>
+    <fileset.resources />
+    <fileset.package />
+    <fileset.depfun>
+      <file>${PROJECT_ROOT}\include\gait2hpp_footer.m</file>
+      <file>${PROJECT_ROOT}\include\gait2hpp_header.m</file>
+      <file>${PROJECT_ROOT}\include\gait2hpp_sit.m</file>
+      <file>${PROJECT_ROOT}\include\gait2hpp_stand.m</file>
+      <file>${PROJECT_ROOT}\include\gait2hpp_walk.m</file>
+      <file>${PROJECT_ROOT}\include\printCppBracket.m</file>
+      <file>${PROJECT_ROOT}\include\StimPatternBuilder_Perc_Sit.m</file>
+      <file>${PROJECT_ROOT}\include\StimPatternBuilder_Perc_Stand.m</file>
+      <file>${PROJECT_ROOT}\include\StimPatternBuilder_Perc_Walk.m</file>
+    </fileset.depfun>
+    <build-deliverables>
+      <file location="${PROJECT_ROOT}\build\for_testing" name="splash.png" optional="false">E:\LLGoogleDriveAndrew\Sync - Work\CWRU\HNPv2\CodeRepo\CwruStim_PatternBuilder\build\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\build\for_testing" name="readme.txt" optional="true">E:\LLGoogleDriveAndrew\Sync - Work\CWRU\HNPv2\CodeRepo\CwruStim_PatternBuilder\build\for_testing\readme.txt</file>
+      <file location="${PROJECT_ROOT}\build\for_testing" name="StimPatternBuilder.exe" optional="false">E:\LLGoogleDriveAndrew\Sync - Work\CWRU\HNPv2\CodeRepo\CwruStim_PatternBuilder\build\for_testing\StimPatternBuilder.exe</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2015b</root>
+      <toolboxes>
+        <toolbox name="fixedpoint" />
+        <toolbox name="matlabcoder" />
+      </toolboxes>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>6.2</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
