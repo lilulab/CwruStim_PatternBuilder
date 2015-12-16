@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration file="E:\LLGoogleDriveAndrew\Sync - Work\CWRU\HNPv2\CodeRepo\CwruStim_PatternBuilder\StimPatternBuilder.prj" location="E:\LLGoogleDriveAndrew\Sync - Work\CWRU\HNPv2\CodeRepo\CwruStim_PatternBuilder" name="StimPatternBuilder" preferred-package-location="E:\LLGoogleDriveAndrew\Sync - Work\CWRU\HNPv2\CodeRepo\CwruStim_PatternBuilder\build\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
+  <configuration build-checksum="1281924517" file="E:\LLGoogleDriveAndrew\Sync - Work\CWRU\HNPv2\CodeRepo\CwruStim_PatternBuilder\StimPatternBuilder.prj" location="E:\LLGoogleDriveAndrew\Sync - Work\CWRU\HNPv2\CodeRepo\CwruStim_PatternBuilder" name="StimPatternBuilder" preferred-package-location="E:\LLGoogleDriveAndrew\Sync - Work\CWRU\HNPv2\CodeRepo\CwruStim_PatternBuilder\build\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>StimPatternBuilder</param.appname>
     <param.icon />
     <param.icons />
@@ -9,7 +9,7 @@
     <param.company>CWRU Biorobotics Lab</param.company>
     <param.summary />
     <param.description />
-    <param.screenshot />
+    <param.screenshot>E:\LLGoogleDriveAndrew\Sync - Work\CWRU\HNPv2\NTREK_LOGO_400.png</param.screenshot>
     <param.guid />
     <param.installpath.string>\CWRU Biorobotics Lab\StimPatternBuilder\</param.installpath.string>
     <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
@@ -29,8 +29,8 @@
       <item>35010</item>
       <item>35001</item>
     </param.required.mcr.products>
-    <param.web.mcr>false</param.web.mcr>
-    <param.package.mcr>true</param.package.mcr>
+    <param.web.mcr>true</param.web.mcr>
+    <param.package.mcr>false</param.package.mcr>
     <param.no.mcr>false</param.no.mcr>
     <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
     <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
@@ -44,17 +44,17 @@
       <param.version />
       <param.summary />
       <param.description />
-      <param.screenshot />
       <param.guid />
       <param.installpath.string />
       <param.installpath.combo />
       <param.logo />
       <param.target.install.notes />
       <param.enable.clean.build />
-      <param.user.defined.mcr.options />
       <param.embed.ctf />
       <param.target.type />
       <param.support.packages />
+      <param.web.mcr />
+      <param.package.mcr />
       <param.no.mcr />
       <param.web.mcr.name />
       <param.package.mcr.name />
