@@ -65,32 +65,50 @@ end
 
 % step duration
 str = num2str(pattern.step_duration(1));
-eval(['gait.Walk.Lstep.duration = ' str ';']);
+eval(['gait.Walk.Duration.Lstep = ' str ';']);
 
 str = num2str(pattern.step_duration(2));
-eval(['gait.Walk.Rstep.duration = ' str ';']);
+eval(['gait.Walk.Duration.Rstep = ' str ';']);
 
 % Amplitude
-eval(['gait.Walk.Channel_amplitude_IST16 = pattern.channel_amplitude(1:16);']);
-eval(['gait.Walk.Channel_amplitude_IRS8 = pattern.channel_amplitude(17:24);']);
+eval(['gait.Walk.IST16.Amplitude = pattern.channel_amplitude(1:16);']);
+eval(['gait.Walk.IRS8.Amplitude= pattern.channel_amplitude(17:24);']);
 
 % gait pattern PP,PW,IPI
 
 % IST16 Board
 % channel loop
-for i=0:15 
-    str = ['CH' num2str(dec2hex(i+1))];
+for i=1:16
+    str = ['CH' num2str(dec2hex(i))];
     % varname = genvarname(str)
     % varname = matlab.lang.makeValidName(str);
     varname = matlab.lang.makeUniqueStrings(str);
     
     % L
-    src = ['walk_channel_data_IST16(:,1:3,i+1);' ];
+    src = ['walk_channel_data_IST16(:,1:3,i);' ];
     eval(['gait.' 'Walk.' 'IST16.' 'Lstep.' varname ' = ' 'pattern.' src]);
     
     % R
-    src = ['walk_channel_data_IST16(:,4:6,i+1);' ];
+    src = ['walk_channel_data_IST16(:,4:6,i);' ];
     eval(['gait.' 'Walk.' 'IST16.' 'Rstep.' varname ' = ' 'pattern.' src]);            
+    %display ([i j]);
+end
+
+% IRS8 Board
+% channel loop
+for i=1:8
+    str = ['CH' num2str(dec2hex(i))];
+    % varname = genvarname(str)
+    % varname = matlab.lang.makeValidName(str);
+    varname = matlab.lang.makeUniqueStrings(str);
+    
+    % L
+    src = ['walk_channel_data_IRS8(:,1:3,i);' ];
+    eval(['gait.' 'Walk.' 'IRS8.' 'Lstep.' varname ' = ' 'pattern.' src]);
+    
+    % R
+    src = ['walk_channel_data_IRS8(:,4:6,i);' ];
+    eval(['gait.' 'Walk.' 'IRS8.' 'Rstep.' varname ' = ' 'pattern.' src]);            
     %display ([i j]);
 end
 
