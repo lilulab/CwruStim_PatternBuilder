@@ -8,7 +8,7 @@
 clear all
 
 % add data folder path
-addpath('ExcelData\PERC');
+addpath('ExcelData/VCK5');
 addpath('include');
 
 %% Load Excel File
@@ -48,7 +48,7 @@ disp(' -        // Located them under "/ExcelData/" Folder.');
 disp('---Load Excel File---');
 
 % GUI load excel
-[excel_filename, pathname] = uigetfile('ExcelData/*.xlsm*', 'Please select desired stim pattern parameter file');
+[excel_filename, pathname] = uigetfile('ExcelData/VCK5/*.xlsm*', 'Please select desired stim pattern parameter file');
 
 
 %% Run FNS
