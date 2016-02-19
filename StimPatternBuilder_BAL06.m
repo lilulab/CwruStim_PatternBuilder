@@ -72,9 +72,8 @@ msg = {
 % pop dialog box
 msgbox(msg,title);
 
-StimPatternBuilder_BAL06_Walk
-% StimPatternBuilder_Perc_Stand
-% StimPatternBuilder_Perc_Sit
+% Run decoder
+PatternDecoder_BAL06
 
 % Dialog and command line printing.
 title = '---Step 2 Done---';
@@ -100,8 +99,8 @@ gait2hpp_header
 
 % Run encode program
 gait2hpp_BAL06_walk
-% gait2hpp_stand
-% gait2hpp_sit
+gait2hpp_BAL06_stand
+gait2hpp_BAL06_sit
 
 % add footer and close file
 gait2hpp_footer
