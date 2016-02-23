@@ -17,7 +17,7 @@ data_src = gait.Walk.IST16.Amplitude;
 Mem_size = Mem_size + printCppBracket(fid, data_src, 'uint8_t', '{', '}');
 fprintf(fid, ';\r\n');
 
-fprintf(fid, ['const uint8_t gait_SURF4_AMP[8] = ']);
+fprintf(fid, ['const uint8_t gait_SURF4_AMP[4] = ']);
 data_src = gait.Walk.SURF4.Amplitude;
 Mem_size = Mem_size + printCppBracket(fid, data_src, 'uint8_t', '{', '}');
 fprintf(fid, ';\r\n');
