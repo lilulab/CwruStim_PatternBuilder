@@ -12,12 +12,12 @@ fprintf(fid, ['const float gait_walk_L_duration = ' num2str(gait.Walk.Duration.L
 
 % Channel Amplitude
 fprintf(fid, ['\r\n// Channel Amplitude \r\n']);
-fprintf(fid, ['const uint8_t gait_IST16_AMP[16] = ']);
+fprintf(fid, ['const uint8_t gait_B1_AMP[16] = ']);
 data_src = gait.Walk.IST16.Amplitude;
 Mem_size = Mem_size + printCppBracket(fid, data_src, 'uint8_t', '{', '}');
 fprintf(fid, ';\r\n');
 
-fprintf(fid, ['const uint8_t gait_IRS8_AMP[8] = ']);
+fprintf(fid, ['const uint8_t gait_B2_AMP[8] = ']);
 data_src = gait.Walk.IRS8.Amplitude;
 Mem_size = Mem_size + printCppBracket(fid, data_src, 'uint8_t', '{', '}');
 fprintf(fid, ';\r\n');
@@ -31,7 +31,7 @@ fprintf(fid, ';\r\n');
     
     % percent pattern
     fprintf(fid, ['\r\n// Percent Pattern\r\n']);
-    fprintf(fid, ['const uint16_t gait_walk_IST16_L' '_PP[' num2str(num_channels) '][8] = { \r\n']);
+    fprintf(fid, ['const uint16_t gait_walk_B1_L' '_PP[' num2str(num_channels) '][8] = { \r\n']);
     for channel_id = 1:num_channels
         fprintf(fid, '\t\t');
         data_src = eval(['gait.Walk.IST16.Lstep' '.CH' num2str(dec2hex(channel_id)) '(:,1)']); %PP
@@ -47,7 +47,7 @@ fprintf(fid, ';\r\n');
 
     % Print Pulse width
     fprintf(fid, ['\r\n// Pulse Width\r\n']);
-    fprintf(fid, ['const uint8_t gait_walk_IST16_L' '_PW[' num2str(num_channels) '][8] = { \r\n']);
+    fprintf(fid, ['const uint8_t gait_walk_B1_L' '_PW[' num2str(num_channels) '][8] = { \r\n']);
     for channel_id = 1:num_channels
         fprintf(fid, '\t\t');
         data_src = eval(['gait.Walk.IST16.Lstep' '.CH' num2str(dec2hex(channel_id)) '(:,2)']); %PW
@@ -61,7 +61,7 @@ fprintf(fid, ';\r\n');
 
     % Print Inter Phase Interval
     fprintf(fid, ['\r\n// Inter Phase Interval\r\n']);
-    fprintf(fid, ['const uint8_t gait_walk_IST16_L' '_IPI[' num2str(num_channels) '] = \r\n']);
+    fprintf(fid, ['const uint8_t gait_walk_B1_L' '_IPI[' num2str(num_channels) '] = \r\n']);
     fprintf(fid, '\t\t{ ');
     for channel_id = 1:num_channels
         data_src = eval(['gait.Walk.IST16.Lstep' '.CH' num2str(dec2hex(channel_id)) '(1,3)']); %IPI
@@ -78,7 +78,7 @@ fprintf(fid, ';\r\n');
     fprintf(fid, ['\r\n// Right Step ---------\r\n']);
     % percent pattern
     fprintf(fid, ['\r\n// Percent Pattern\r\n']);
-    fprintf(fid, ['const uint16_t gait_walk_IST16_R' '_PP[' num2str(num_channels) '][8] = { \r\n']);
+    fprintf(fid, ['const uint16_t gait_walk_B1_R' '_PP[' num2str(num_channels) '][8] = { \r\n']);
     for channel_id = 1:num_channels
         fprintf(fid, '\t\t');
         data_src = eval(['gait.Walk.IST16.Rstep' '.CH' num2str(dec2hex(channel_id)) '(:,1)']); %PP
@@ -94,7 +94,7 @@ fprintf(fid, ';\r\n');
 
     % Print Pulse width
     fprintf(fid, ['\r\n// Pulse Width\r\n']);
-    fprintf(fid, ['const uint8_t gait_walk_IST16_R' '_PW[' num2str(num_channels) '][8] = { \r\n']);
+    fprintf(fid, ['const uint8_t gait_walk_B1_R' '_PW[' num2str(num_channels) '][8] = { \r\n']);
     for channel_id = 1:num_channels
         fprintf(fid, '\t\t');
         data_src = eval(['gait.Walk.IST16.Rstep' '.CH' num2str(dec2hex(channel_id)) '(:,2)']); %PW
@@ -108,7 +108,7 @@ fprintf(fid, ';\r\n');
 
     % Print Inter Phase Interval
     fprintf(fid, ['\r\n// Inter Phase Interval\r\n']);
-    fprintf(fid, ['const uint8_t gait_walk_IST16_R' '_IPI[' num2str(num_channels) '] = \r\n']);
+    fprintf(fid, ['const uint8_t gait_walk_B1_R' '_IPI[' num2str(num_channels) '] = \r\n']);
     fprintf(fid, '\t\t{ ');
     for channel_id = 1:num_channels
         data_src = eval(['gait.Walk.IST16.Rstep' '.CH' num2str(dec2hex(channel_id)) '(1,3)']); %IPI
@@ -130,7 +130,7 @@ fprintf(fid, ';\r\n');
     
     % percent pattern
     fprintf(fid, ['\r\n// Percent Pattern\r\n']);
-    fprintf(fid, ['const uint16_t gait_walk_IRS8_L' '_PP[' num2str(num_channels) '][8] = { \r\n']);
+    fprintf(fid, ['const uint16_t gait_walk_B2_L' '_PP[' num2str(num_channels) '][8] = { \r\n']);
     for channel_id = 1:num_channels
         fprintf(fid, '\t\t');
         data_src = eval(['gait.Walk.IRS8.Lstep' '.CH' num2str(dec2hex(channel_id)) '(:,1)']); %PP
@@ -146,7 +146,7 @@ fprintf(fid, ';\r\n');
 
     % Print Pulse width
     fprintf(fid, ['\r\n// Pulse Width\r\n']);
-    fprintf(fid, ['const uint8_t gait_walk_IRS8_L' '_PW[' num2str(num_channels) '][8] = { \r\n']);
+    fprintf(fid, ['const uint8_t gait_walk_B2_L' '_PW[' num2str(num_channels) '][8] = { \r\n']);
     for channel_id = 1:num_channels
         fprintf(fid, '\t\t');
         data_src = eval(['gait.Walk.IRS8.Lstep' '.CH' num2str(dec2hex(channel_id)) '(:,2)']); %PW
@@ -160,7 +160,7 @@ fprintf(fid, ';\r\n');
 
     % Print Inter Phase Interval
     fprintf(fid, ['\r\n// Inter Phase Interval\r\n']);
-    fprintf(fid, ['const uint8_t gait_walk_IRS8_L' '_IPI[' num2str(num_channels) '] = \r\n']);
+    fprintf(fid, ['const uint8_t gait_walk_B2_L' '_IPI[' num2str(num_channels) '] = \r\n']);
     fprintf(fid, '\t\t{ ');
     for channel_id = 1:num_channels
         data_src = eval(['gait.Walk.IRS8.Lstep' '.CH' num2str(dec2hex(channel_id)) '(1,3)']); %IPI
@@ -177,7 +177,7 @@ fprintf(fid, ';\r\n');
     fprintf(fid, ['\r\n// Right Step ---------\r\n']);
     % percent pattern
     fprintf(fid, ['\r\n// Percent Pattern\r\n']);
-    fprintf(fid, ['const uint16_t gait_walk_IRS8_R' '_PP[' num2str(num_channels) '][8] = { \r\n']);
+    fprintf(fid, ['const uint16_t gait_walk_B2_R' '_PP[' num2str(num_channels) '][8] = { \r\n']);
     for channel_id = 1:num_channels
         fprintf(fid, '\t\t');
         data_src = eval(['gait.Walk.IRS8.Rstep' '.CH' num2str(dec2hex(channel_id)) '(:,1)']); %PP
@@ -193,7 +193,7 @@ fprintf(fid, ';\r\n');
 
     % Print Pulse width
     fprintf(fid, ['\r\n// Pulse Width\r\n']);
-    fprintf(fid, ['const uint8_t gait_walk_IRS8_R' '_PW[' num2str(num_channels) '][8] = { \r\n']);
+    fprintf(fid, ['const uint8_t gait_walk_B2_R' '_PW[' num2str(num_channels) '][8] = { \r\n']);
     for channel_id = 1:num_channels
         fprintf(fid, '\t\t');
         data_src = eval(['gait.Walk.IRS8.Rstep' '.CH' num2str(dec2hex(channel_id)) '(:,2)']); %PW
@@ -207,7 +207,7 @@ fprintf(fid, ';\r\n');
 
     % Print Inter Phase Interval
     fprintf(fid, ['\r\n// Inter Phase Interval\r\n']);
-    fprintf(fid, ['const uint8_t gait_walk_IRS8_R' '_IPI[' num2str(num_channels) '] = \r\n']);
+    fprintf(fid, ['const uint8_t gait_walk_B2_R' '_IPI[' num2str(num_channels) '] = \r\n']);
     fprintf(fid, '\t\t{ ');
     for channel_id = 1:num_channels
         data_src = eval(['gait.Walk.IRS8.Rstep' '.CH' num2str(dec2hex(channel_id)) '(1,3)']); %IPI
