@@ -50,10 +50,6 @@ disp('---Load Excel File---');
 % GUI load excel
 [excel_filename, pathname] = uigetfile('ExcelData/VCK5/*.xlsm*', 'Please select desired stim pattern parameter file');
 
-
-%% Run FNS
-% StimPatternBuilder_FNS
-
 %% Run Perc excel decode program
 disp(' ');
 disp(' -Running Step 2: Decode the gait params from the Excel.');
@@ -75,6 +71,10 @@ msgbox(msg,title);
 StimPatternBuilder_Perc_Walk
 StimPatternBuilder_Perc_Stand
 StimPatternBuilder_Perc_Sit
+
+MiscID = 1;     StimPatternBuilder_Perc_Misc;
+MiscID = 2;     StimPatternBuilder_Perc_Misc;
+MiscID = 3;     StimPatternBuilder_Perc_Misc;
 
 % Dialog and command line printing.
 title = '---Step 2 Done---';
