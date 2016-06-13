@@ -103,5 +103,9 @@ gait2hpp_walk
 gait2hpp_stand
 gait2hpp_sit
 
+MiscID = 1;     gait2hpp_misc;
+MiscID = 2;     gait2hpp_misc;
+MiscID = 3;     gait2hpp_misc;
+
 % add footer and close file
 gait2hpp_footer
