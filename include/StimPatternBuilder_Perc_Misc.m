@@ -70,7 +70,7 @@ for j=0:1
             src = ['temp.misc_channel_data(:,1:3,i+1+j*12);'];
             eval(['gait.' varname '.' varname2 ' = ' src]);         
 
-            display ([i j]);
+            %display ([i j]);
         end
 
 end
